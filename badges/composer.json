@@ -69,6 +69,6 @@
             "@test:type-coverage",
             "@test:unit"
         ],
-        "coverage": "XDEBUG_MODE=coverage pest ./tests/Unit --coverage-clover=coverage.xml"
+        "coverage": "XDEBUG_MODE=coverage pest ./tests/Unit --coverage-clover=coverage.xml --coverage-html coverage-html"
     }
 }
