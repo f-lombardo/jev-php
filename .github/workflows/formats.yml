@@ -8,7 +8,7 @@ on:
       - 'tests/**'
       - '.github/workflows/**'
     branches:
-      - main
+      - master
   pull_request:
     paths: *on-paths-filter
 
