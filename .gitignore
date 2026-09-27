@@ -17,3 +17,5 @@ script.php
 /docs/.venv/
 /docs/_build/
 .tokensave
+/coverage-html/
+/coverage.xml
