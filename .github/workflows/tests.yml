@@ -56,41 +56,41 @@ jobs:
         name: coverage-clover
         path: coverage.xml
 
-    - name: Compute coverage percentage                                                                                                                                                                                        ┃
-      id: coverage                                                                                                                                                                                                             ┃
-      run: |                                                                                                                                                                                                                   ┃
-        COVERAGE=$(php -r '                                                                                                                                                                                                    ┃
-          $xml = simplexml_load_file("coverage.xml");                                                                                                                                                                          ┃
-          $m = $xml->project->metrics;                                                                                                                                                                                         ┃
-          $statements = (int)$m["statements"];                                                                                                                                                                                 ┃
-          $covered = (int)$m["coveredstatements"];                                                                                                                                                                             ┃
-          $pct = $statements > 0 ? round(($covered / $statements) * 100) : 0;                                                                                                                                                  ┃
-          echo $pct;                                                                                                                                                                                                           ┃
-        ')                                                                                                                                                                                                                     ┃
-        echo "value=$COVERAGE" >> "$GITHUB_OUTPUT"                                                                                                                                                                             ┃
-                                                                                                                                                                                                                               ┃
-    - name: Generate coverage.svg                                                                                                                                                                                              ┃
-      run: |                                                                                                                                                                                                                   ┃
-        PCT=${{ steps.coverage.outputs.value }}                                                                                                                                                                                ┃
-        if [ "$PCT" -ge 90 ]; then COLOR=brightgreen                                                                                                                                                                           ┃
-        elif [ "$PCT" -ge 75 ]; then COLOR=green                                                                                                                                                                               ┃
-        elif [ "$PCT" -ge 60 ]; then COLOR=yellow                                                                                                                                                                              ┃
-        elif [ "$PCT" -ge 40 ]; then COLOR=orange                                                                                                                                                                              ┃
-        else COLOR=red                                                                                                                                                                                                         ┃
-        fi                                                                                                                                                                                                                     ┃
+    - name: Compute coverage percentage
+      id: coverage
+      run: |
+        COVERAGE=$(php -r '
+          $xml = simplexml_load_file("coverage.xml");
+          $m = $xml->project->metrics;
+          $statements = (int)$m["statements"];
+          $covered = (int)$m["coveredstatements"];
+          $pct = $statements > 0 ? round(($covered / $statements) * 100) : 0;
+          echo $pct;
+        ')
+        echo "value=$COVERAGE" >> "$GITHUB_OUTPUT"
+
+    - name: Generate coverage.svg
+      run: |
+        PCT=${{ steps.coverage.outputs.value }}
+        if [ "$PCT" -ge 90 ]; then COLOR=brightgreen
+        elif [ "$PCT" -ge 75 ]; then COLOR=green
+        elif [ "$PCT" -ge 60 ]; then COLOR=yellow
+        elif [ "$PCT" -ge 40 ]; then COLOR=orange
+        else COLOR=red
+        fi
         curl -sSL "https://img.shields.io/badge/coverage-${PCT}%25-${COLOR}.svg" -o coverage.svg
 
-        - name: Publish coverage badge to gh-pages                                                                                                                                                                                 ┃
-         if: github.event_name == 'push' && github.ref == 'refs/heads/master'                                                                                                                                                     ┃
-         uses: peaceiris/actions-gh-pages@v4                                                                                                                                                                                      ┃
-         with:                                                                                                                                                                                                                    ┃
-           github_token: ${{ secrets.GITHUB_TOKEN }}                                                                                                                                                                              ┃
-           publish_branch: gh-pages                                                                                                                                                                                               ┃
-           publish_dir: .                                                                                                                                                                                                         ┃
-           keep_files: true                                                                                                                                                                                                       ┃
-           force_orphan: false                                                                                                                                                                                                    ┃
-           destination_dir: badges                                                                                                                                                                                                ┃
-           enable_jekyll: false
+    - name: Publish coverage badge to gh-pages
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: .
+        keep_files: true
+        force_orphan: false
+        destination_dir: badges
+        enable_jekyll: false
 
     - name: Composer Audit
       run: composer audit
