@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1790523845">
-  <project timestamp="1790523845" name="Clover Coverage">
+<coverage generated="1790524431">
+  <project timestamp="1790524431" name="Clover Coverage">
     <package name="JevPHP\Classification">
       <file name="/home/runner/work/jev-php/jev-php/src/Classification/Answer.php">
         <class name="JevPHP\Classification\Answer" namespace="JevPHP\Classification">
@@ -246,26 +246,8 @@
         </class>
         <metrics loc="12" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
       </file>
-      <file name="/home/runner/work/jev-php/jev-php/src/Exception/MissingFeatureException.php">
-        <class name="JevPHP\Exception\MissingFeatureException" namespace="JevPHP\Exception">
-          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
-        </class>
-        <metrics loc="12" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
-      </file>
-      <file name="/home/runner/work/jev-php/jev-php/src/Exception/MissingParameterException.php">
-        <class name="JevPHP\Exception\MissingParameterException" namespace="JevPHP\Exception">
-          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
-        </class>
-        <metrics loc="12" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
-      </file>
-      <file name="/home/runner/work/jev-php/jev-php/src/Exception/SecurityException.php">
-        <class name="JevPHP\Exception\SecurityException" namespace="JevPHP\Exception">
-          <metrics complexity="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
-        </class>
-        <metrics loc="12" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
-      </file>
     </package>
-    <file name="/home/runner/work/jev-php/jev-php/src/Exception/LLPhantException.php">
+    <file name="/home/runner/work/jev-php/jev-php/src/Exception/JevPHPException.php">
       <metrics loc="12" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
     <package name="JevPHP">
@@ -296,6 +278,6 @@
         <metrics loc="53" ncloc="48" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="1" elements="20" coveredelements="1"/>
       </file>
     </package>
-    <metrics files="21" loc="624" ncloc="571" classes="14" methods="23" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="146" coveredstatements="109" elements="169" coveredelements="125"/>
+    <metrics files="18" loc="588" ncloc="535" classes="14" methods="23" coveredmethods="16" conditionals="0" coveredconditionals="0" statements="146" coveredstatements="109" elements="169" coveredelements="125"/>
   </project>
 </coverage>
