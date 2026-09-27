@@ -18,7 +18,7 @@ jobs:
     permissions:
       contents: write
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         os: [ubuntu-latest]
         php: [8.2]
@@ -51,12 +51,14 @@ jobs:
       run: composer coverage
 
     - name: Upload coverage report artifact
+      if: matrix.dependency-version == 'prefer-stable'
       uses: actions/upload-artifact@v4
       with:
         name: coverage-clover
         path: coverage.xml
 
     - name: Compute coverage percentage
+      if: matrix.dependency-version == 'prefer-stable'
       id: coverage
       run: |
         COVERAGE=$(php -r '
@@ -70,6 +72,7 @@ jobs:
         echo "value=$COVERAGE" >> "$GITHUB_OUTPUT"
 
     - name: Generate coverage.svg
+      if: matrix.dependency-version == 'prefer-stable'
       run: |
         PCT=${{ steps.coverage.outputs.value }}
         if [ "$PCT" -ge 90 ]; then COLOR=brightgreen
@@ -81,7 +84,7 @@ jobs:
         curl -sSL "https://img.shields.io/badge/coverage-${PCT}%25-${COLOR}.svg" -o coverage.svg
 
     - name: Publish coverage badge to gh-pages
-      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master' && matrix.dependency-version == 'prefer-stable'
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
