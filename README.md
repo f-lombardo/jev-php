@@ -1,5 +1,7 @@
 # jev-php
 
+![Coverage](https://f-lombardo.github.io/jev-php/badges/coverage.svg)
+
 `jev-php` is a small PHP library extracted from the larger PHP project [LLPhant](https://github.com/LLPhant/LLPhant) to
 provide typed access to [Jev](https://docs.typesafe.ai/api) classification APIs.
 
