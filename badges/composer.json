@@ -1,0 +1,74 @@
+{
+    "name": "f-lombardo/jev-php",
+    "description": "A library to connect PHP applications to Jev APIs",
+    "keywords": ["php", "jev", "api", "ai", "classification"],
+    "license": "MIT",
+    "version" : "1.0.0",
+    "authors": [
+        {
+            "name": "Franco Lombardo"
+        }
+    ],
+    "require": {
+        "php": "^8.1.0",
+        "php-http/discovery": "^1.20.0",
+        "psr/http-client": "^1.0.3",
+        "psr/http-message": "^1.0 || ^2.0",
+        "psr/log": "^3.0"
+    },
+    "suggest": {
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^7.4.5",
+        "guzzlehttp/psr7": "^2.7",
+        "laravel/pint": "v1.15.3",
+        "mockery/mockery": "^1.6.12",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-arch": "^3.0",
+        "pestphp/pest-plugin-type-coverage": "^3.0",
+        "phpstan/phpstan": "^2",
+        "rector/rector": "^2"
+    },
+    "autoload": {
+        "psr-4": {
+            "JevPHP\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": false
+        }
+    },
+    "scripts": {
+        "lint": "pint -v src tests",
+        "fix-lint": "pint -v --repair src tests",
+        "test:lint": "pint --test -v src tests",
+        "test:types": "phpstan analyse --ansi --memory-limit 4G",
+        "test:type-coverage": "php ./vendor/bin/pest ./tests --type-coverage --min=100 --memory-limit=4G",
+        "test:unit": "pest ./tests/Unit --colors=always",
+        "test:int": "pest ./tests/Integration --colors=always",
+        "test": [
+            "@test:lint",
+            "@test:types",
+            "@test:type-coverage",
+            "@test:unit"
+        ],
+        "quality": [
+            "@fix-lint",
+            "@test:types",
+            "@test:type-coverage",
+            "@test:unit"
+        ],
+        "coverage": "XDEBUG_MODE=coverage pest ./tests/Unit --coverage-clover=coverage.xml"
+    }
+}

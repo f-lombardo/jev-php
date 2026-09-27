@@ -1,0 +1,22 @@
+services:
+    php:
+        container_name: ${COMPOSE_PROJECT_NAME}-php
+        user: developer
+        stdin_open: true
+        tty: true
+        restart: on-failure
+        build:
+            context: php
+            args:
+                PHP_VERSION: ${PHP_VERSION}
+                COMPOSE_PROJECT_NAME: ${COMPOSE_PROJECT_NAME}
+                UID: ${UID}
+                GID: ${GID}
+        extra_hosts:
+            - "host.docker.internal:host-gateway"
+        volumes:
+            - ${APP_PATH}:/var/${COMPOSE_PROJECT_NAME}
+
+        environment:
+            PHP_IDE_CONFIG: serverName=PHPSTORM
+            JEV_API_KEY: ${JEV_API_KEY}
