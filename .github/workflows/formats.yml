@@ -1,5 +1,8 @@
 name: Formats
 
+permissions:
+  contents: read
+
 on:
   push:
     paths: &on-paths-filter
