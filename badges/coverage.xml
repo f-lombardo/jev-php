@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1790526428">
-  <project timestamp="1790526428" name="Clover Coverage">
+<coverage generated="1790843166">
+  <project timestamp="1790843166" name="Clover Coverage">
     <package name="JevPHP\Classification">
       <file name="/home/runner/work/jev-php/jev-php/src/Classification/Answer.php">
         <class name="JevPHP\Classification\Answer" namespace="JevPHP\Classification">
@@ -155,15 +155,19 @@
       </file>
       <file name="/home/runner/work/jev-php/jev-php/src/Classification/NoulAnswer.php">
         <class name="JevPHP\Classification\NoulAnswer" namespace="JevPHP\Classification">
-          <metrics complexity="3" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="1" elements="6" coveredelements="2"/>
+          <metrics complexity="7" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="3" elements="10" coveredelements="4"/>
         </class>
         <line num="11" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
         <line num="16" type="stmt" count="2"/>
-        <line num="19" type="method" name="isSimilarTo" visibility="public" complexity="2" crap="6" count="0"/>
-        <line num="21" type="stmt" count="0"/>
+        <line num="19" type="method" name="isTrue" visibility="public" complexity="4" crap="4.59" count="1"/>
+        <line num="21" type="stmt" count="1"/>
         <line num="22" type="stmt" count="0"/>
-        <line num="25" type="stmt" count="0"/>
-        <metrics loc="28" ncloc="28" classes="1" methods="2" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="1" elements="6" coveredelements="2"/>
+        <line num="25" type="stmt" count="1"/>
+        <line num="28" type="method" name="isSimilarTo" visibility="public" complexity="2" crap="6" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="0"/>
+        <line num="34" type="stmt" count="0"/>
+        <metrics loc="37" ncloc="37" classes="1" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="3" elements="10" coveredelements="4"/>
       </file>
       <file name="/home/runner/work/jev-php/jev-php/src/Classification/NoulCriteria.php">
         <class name="JevPHP\Classification\NoulCriteria" namespace="JevPHP\Classification">
@@ -278,6 +282,6 @@
         <metrics loc="53" ncloc="48" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="20" coveredelements="20"/>
       </file>
     </package>
-    <metrics files="18" loc="588" ncloc="535" classes="14" methods="23" coveredmethods="18" conditionals="0" coveredconditionals="0" statements="146" coveredstatements="126" elements="169" coveredelements="144"/>
+    <metrics files="18" loc="597" ncloc="544" classes="14" methods="24" coveredmethods="18" conditionals="0" coveredconditionals="0" statements="149" coveredstatements="128" elements="173" coveredelements="146"/>
   </project>
 </coverage>
