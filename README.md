@@ -78,9 +78,24 @@ $answers = $classifier->askQuestions(
     $questions
 );
 
-// $answers['is_urgent']   => JevPHP\Classification\NoulAnswer
-// $answers['department']  => JevPHP\Classification\ChoiceAnswer
-// $answers['frustration'] => JevPHP\Classification\ScoreAnswer
+
+/** @var JevPHP\Classification\NoulAnswer $isUrgent */
+$isUrgent = $answers['is_urgent'];
+$isUrgentValue = $isUrgent->isTrue();
+$isProbablyUrgent = $isUrgent->isTrue(0.80);
+
+/** @var JevPHP\Classification\ChoiceAnswer $department */
+$department = $answers['department'];
+$departmentChoice = $department->choice;
+$departmentConfidence = $department->confidence;
+$departmentProbabilities = $department->probabilities;
+
+/** @var JevPHP\Classification\ScoreAnswer $frustrationScore */
+$frustrationScore = $answers['frustration'];
+$frustrationValue = $frustrationScore->score;
+$frustrationConfidence = $frustrationScore->confidence;
+$frustrationLegend = $frustrationScore->legend;
+$frustrationProbabilities = $frustrationScore->probabilities;
 ```
 
 ## Question and answer types
@@ -91,6 +106,8 @@ $answers = $classifier->askQuestions(
 - **Answer**: `NoulAnswer`
 - Main field: `score` (`0..1`)
 - Optional criteria object: `NoulCriteria`
+- Helper method:
+  - `isTrue(float $minTrueScore = 0.95): bool` returns `true` when `score >= $minTrueScore`.
 
 ### Choice
 
