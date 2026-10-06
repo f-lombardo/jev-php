@@ -6,7 +6,7 @@ namespace JevPHP\Classification;
 
 class NoulAnswer extends Answer
 {
-    const MAX_DIFFERENCE = 0.05;
+    const MAX_DIFFERENCE = 0.1;
 
     public function __construct(
         public readonly float $score,

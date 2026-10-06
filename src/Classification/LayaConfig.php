@@ -9,23 +9,27 @@ use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 
-class JevConfig
+class LayaConfig
 {
-    const URL = 'https://api.typesafe.ai/v1/systemone';
-
     const LATEST = 'jev-latest';
 
     public readonly string $apiKey;
 
+    public readonly string $url;
+
+    public readonly string $model;
+
     public function __construct(
         ?string $apiKey = null,
-        public readonly string $url = self::URL,
-        public readonly string $model = self::LATEST,
+        ?string $url = null,
         public readonly ?ClientInterface $client = null,
         public readonly ?RequestFactoryInterface $requestFactory = null,
         public readonly ?StreamFactoryInterface $streamFactory = null,
     ) {
         $this->apiKey = $apiKey
-            ?? (string) Utility::readEnvironment('JEV_API_KEY', '');
+            ?? (string) Utility::readEnvironment('LAYA_API_KEY', '');
+        $this->url = $url
+            ?? (string) Utility::readEnvironment('LAYA_URL', '');
+        $this->model = self::LATEST;
     }
 }
