@@ -3,7 +3,7 @@
     "description": "A library to connect PHP applications to Jev APIs",
     "keywords": ["php", "jev", "api", "ai", "classification"],
     "license": "MIT",
-    "version" : "1.0.2",
+    "version" : "1.0.3",
     "authors": [
         {
             "name": "Franco Lombardo"
