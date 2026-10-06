@@ -41,6 +41,32 @@ export JEV_API_KEY=your_api_key
 
 You can also pass it explicitly via `JevConfig`.
 
+## Laya decision engine
+
+`JevClassifier` also supports [Laya](https://github.com/NandhaKishorM/laya) through [
+`LayaConfig`](src/Classification/LayaConfig.php).
+
+Set Laya environment variables:
+
+```bash
+export LAYA_API_KEY=your_laya_api_key
+export LAYA_URL=https://your-laya-endpoint/v1/systemone
+```
+
+(`LAYA_API_KEY` is optional)
+
+Then initialize the classifier with `LayaConfig`:
+
+```php
+use JevPHP\Classification\JevClassifier;
+use JevPHP\Classification\LayaConfig;
+
+$classifier = new JevClassifier(new LayaConfig());
+```
+
+See [Docker quickstart](https://github.com/NandhaKishorM/laya/blob/main/docs/docker.md) from Laya documentation for
+starting a local docker instance of `laya-serve`, which exposes Laya using a Jev compatible API.
+
 ## Quick start
 
 ```php
@@ -107,7 +133,7 @@ $frustrationProbabilities = $frustrationScore->probabilities;
 - Main field: `score` (`0..1`)
 - Optional criteria object: `NoulCriteria`
 - Helper method:
-  - `isTrue(float $minTrueScore = 0.95): bool` returns `true` when `score >= $minTrueScore`.
+    - `isTrue(float $minTrueScore = 0.95): bool` returns `true` when `score >= $minTrueScore`.
 
 ### Choice
 
@@ -164,6 +190,7 @@ docker compose exec php composer test:unit
 
 There's also a brief composer script you can run before committing your changes in order to be sure that base checks are
 OK is `composer quality`:
+
 ```bash
 docker compose exec php composer quality
 ```
