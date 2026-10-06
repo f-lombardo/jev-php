@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1791323215">
-  <project timestamp="1791323215" name="Clover Coverage">
+<coverage generated="1791323667">
+  <project timestamp="1791323667" name="Clover Coverage">
     <package name="JevPHP\Classification">
       <file name="/home/runner/work/jev-php/jev-php/src/Classification/Answer.php">
         <class name="JevPHP\Classification\Answer" namespace="JevPHP\Classification">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
         </class>
-        <line num="7" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="4"/>
-        <line num="12" type="stmt" count="4"/>
+        <line num="7" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="5"/>
+        <line num="12" type="stmt" count="5"/>
         <metrics loc="14" ncloc="14" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </file>
       <file name="/home/runner/work/jev-php/jev-php/src/Classification/ChoiceAnswer.php">
@@ -43,55 +43,55 @@
         <class name="JevPHP\Classification\JevClassifier" namespace="JevPHP\Classification">
           <metrics complexity="13" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="62" coveredstatements="57" elements="66" coveredelements="60"/>
         </class>
-        <line num="30" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="4"/>
-        <line num="34" type="stmt" count="4"/>
-        <line num="35" type="stmt" count="4"/>
-        <line num="36" type="stmt" count="4"/>
-        <line num="37" type="stmt" count="4"/>
-        <line num="38" type="stmt" count="4"/>
-        <line num="39" type="stmt" count="4"/>
-        <line num="40" type="stmt" count="4"/>
-        <line num="41" type="stmt" count="4"/>
-        <line num="51" type="method" name="askQuestions" visibility="public" complexity="2" crap="2" count="4"/>
-        <line num="53" type="stmt" count="4"/>
-        <line num="55" type="stmt" count="4"/>
-        <line num="57" type="stmt" count="4"/>
-        <line num="59" type="stmt" count="4"/>
-        <line num="60" type="stmt" count="4"/>
-        <line num="61" type="stmt" count="4"/>
-        <line num="62" type="stmt" count="4"/>
-        <line num="64" type="stmt" count="4"/>
-        <line num="66" type="stmt" count="4"/>
-        <line num="67" type="stmt" count="4"/>
-        <line num="70" type="stmt" count="4"/>
-        <line num="80" type="method" name="sendRequest" visibility="protected" complexity="4" crap="4.29" count="4"/>
-        <line num="82" type="stmt" count="4"/>
-        <line num="83" type="stmt" count="4"/>
-        <line num="84" type="stmt" count="4"/>
-        <line num="85" type="stmt" count="4"/>
-        <line num="87" type="stmt" count="4"/>
-        <line num="88" type="stmt" count="4"/>
-        <line num="89" type="stmt" count="4"/>
-        <line num="90" type="stmt" count="4"/>
-        <line num="93" type="stmt" count="4"/>
-        <line num="95" type="stmt" count="4"/>
-        <line num="97" type="stmt" count="4"/>
-        <line num="99" type="stmt" count="4"/>
-        <line num="100" type="stmt" count="4"/>
+        <line num="30" type="method" name="__construct" visibility="public" complexity="2" crap="2" count="5"/>
+        <line num="34" type="stmt" count="5"/>
+        <line num="35" type="stmt" count="5"/>
+        <line num="36" type="stmt" count="5"/>
+        <line num="37" type="stmt" count="5"/>
+        <line num="38" type="stmt" count="5"/>
+        <line num="39" type="stmt" count="5"/>
+        <line num="40" type="stmt" count="5"/>
+        <line num="41" type="stmt" count="5"/>
+        <line num="51" type="method" name="askQuestions" visibility="public" complexity="2" crap="2" count="5"/>
+        <line num="53" type="stmt" count="5"/>
+        <line num="55" type="stmt" count="5"/>
+        <line num="57" type="stmt" count="5"/>
+        <line num="59" type="stmt" count="5"/>
+        <line num="60" type="stmt" count="5"/>
+        <line num="61" type="stmt" count="5"/>
+        <line num="62" type="stmt" count="5"/>
+        <line num="64" type="stmt" count="5"/>
+        <line num="66" type="stmt" count="5"/>
+        <line num="67" type="stmt" count="5"/>
+        <line num="70" type="stmt" count="5"/>
+        <line num="80" type="method" name="sendRequest" visibility="protected" complexity="4" crap="4.29" count="5"/>
+        <line num="82" type="stmt" count="5"/>
+        <line num="83" type="stmt" count="5"/>
+        <line num="84" type="stmt" count="5"/>
+        <line num="85" type="stmt" count="5"/>
+        <line num="87" type="stmt" count="5"/>
+        <line num="88" type="stmt" count="5"/>
+        <line num="89" type="stmt" count="5"/>
+        <line num="90" type="stmt" count="5"/>
+        <line num="93" type="stmt" count="5"/>
+        <line num="95" type="stmt" count="5"/>
+        <line num="97" type="stmt" count="5"/>
+        <line num="99" type="stmt" count="5"/>
+        <line num="100" type="stmt" count="5"/>
         <line num="101" type="stmt" count="0"/>
         <line num="102" type="stmt" count="0"/>
         <line num="103" type="stmt" count="0"/>
         <line num="104" type="stmt" count="0"/>
         <line num="105" type="stmt" count="0"/>
-        <line num="108" type="stmt" count="4"/>
-        <line num="116" type="method" name="decodeAnswer" visibility="private" complexity="5" crap="5" count="4"/>
-        <line num="118" type="stmt" count="4"/>
-        <line num="120" type="stmt" count="4"/>
-        <line num="121" type="stmt" count="2"/>
-        <line num="122" type="stmt" count="2"/>
-        <line num="123" type="stmt" count="2"/>
-        <line num="124" type="stmt" count="2"/>
-        <line num="125" type="stmt" count="2"/>
+        <line num="108" type="stmt" count="5"/>
+        <line num="116" type="method" name="decodeAnswer" visibility="private" complexity="5" crap="5" count="5"/>
+        <line num="118" type="stmt" count="5"/>
+        <line num="120" type="stmt" count="5"/>
+        <line num="121" type="stmt" count="3"/>
+        <line num="122" type="stmt" count="3"/>
+        <line num="123" type="stmt" count="3"/>
+        <line num="124" type="stmt" count="3"/>
+        <line num="125" type="stmt" count="3"/>
         <line num="126" type="stmt" count="1"/>
         <line num="127" type="stmt" count="1"/>
         <line num="128" type="stmt" count="1"/>
@@ -107,8 +107,8 @@
         <line num="138" type="stmt" count="1"/>
         <line num="139" type="stmt" count="1"/>
         <line num="140" type="stmt" count="1"/>
-        <line num="141" type="stmt" count="4"/>
-        <line num="142" type="stmt" count="4"/>
+        <line num="141" type="stmt" count="5"/>
+        <line num="142" type="stmt" count="5"/>
         <metrics loc="145" ncloc="126" classes="1" methods="4" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="62" coveredstatements="57" elements="66" coveredelements="60"/>
       </file>
       <file name="/home/runner/work/jev-php/jev-php/src/Classification/JevConfig.php">
@@ -124,54 +124,54 @@
         <class name="JevPHP\Classification\JevRequestBody" namespace="JevPHP\Classification">
           <metrics complexity="8" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="25" elements="28" coveredelements="28"/>
         </class>
-        <line num="10" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="6"/>
-        <line num="15" type="stmt" count="6"/>
-        <line num="20" type="method" name="toJSON" visibility="public" complexity="2" crap="2" count="6"/>
-        <line num="22" type="stmt" count="6"/>
-        <line num="23" type="stmt" count="6"/>
-        <line num="24" type="stmt" count="6"/>
-        <line num="25" type="stmt" count="6"/>
-        <line num="26" type="stmt" count="6"/>
-        <line num="28" type="stmt" count="6"/>
-        <line num="29" type="stmt" count="6"/>
+        <line num="10" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
+        <line num="15" type="stmt" count="7"/>
+        <line num="20" type="method" name="toJSON" visibility="public" complexity="2" crap="2" count="7"/>
+        <line num="22" type="stmt" count="7"/>
+        <line num="23" type="stmt" count="7"/>
+        <line num="24" type="stmt" count="7"/>
+        <line num="25" type="stmt" count="7"/>
+        <line num="26" type="stmt" count="7"/>
+        <line num="28" type="stmt" count="7"/>
+        <line num="29" type="stmt" count="7"/>
         <line num="30" type="stmt" count="2"/>
-        <line num="33" type="stmt" count="6"/>
-        <line num="36" type="method" name="removeNulls" visibility="public" complexity="5" crap="5" count="6"/>
-        <line num="38" type="stmt" count="6"/>
-        <line num="39" type="stmt" count="6"/>
-        <line num="40" type="stmt" count="6"/>
-        <line num="41" type="stmt" count="6"/>
-        <line num="42" type="stmt" count="6"/>
-        <line num="43" type="stmt" count="6"/>
-        <line num="44" type="stmt" count="6"/>
-        <line num="45" type="stmt" count="6"/>
-        <line num="48" type="stmt" count="6"/>
-        <line num="49" type="stmt" count="6"/>
-        <line num="51" type="stmt" count="6"/>
-        <line num="52" type="stmt" count="6"/>
-        <line num="53" type="stmt" count="6"/>
-        <line num="57" type="stmt" count="6"/>
-        <line num="60" type="stmt" count="6"/>
+        <line num="33" type="stmt" count="7"/>
+        <line num="36" type="method" name="removeNulls" visibility="public" complexity="5" crap="5" count="7"/>
+        <line num="38" type="stmt" count="7"/>
+        <line num="39" type="stmt" count="7"/>
+        <line num="40" type="stmt" count="7"/>
+        <line num="41" type="stmt" count="7"/>
+        <line num="42" type="stmt" count="7"/>
+        <line num="43" type="stmt" count="7"/>
+        <line num="44" type="stmt" count="7"/>
+        <line num="45" type="stmt" count="7"/>
+        <line num="48" type="stmt" count="7"/>
+        <line num="49" type="stmt" count="7"/>
+        <line num="51" type="stmt" count="7"/>
+        <line num="52" type="stmt" count="7"/>
+        <line num="53" type="stmt" count="7"/>
+        <line num="57" type="stmt" count="7"/>
+        <line num="60" type="stmt" count="7"/>
         <metrics loc="63" ncloc="57" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="25" coveredstatements="25" elements="28" coveredelements="28"/>
       </file>
       <file name="/home/runner/work/jev-php/jev-php/src/Classification/LayaConfig.php">
         <class name="JevPHP\Classification\LayaConfig" namespace="JevPHP\Classification">
-          <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
+          <metrics complexity="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="3" elements="6" coveredelements="3"/>
         </class>
-        <line num="22" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
-        <line num="29" type="stmt" count="0"/>
+        <line num="22" type="method" name="__construct" visibility="public" complexity="1" crap="1.06" count="1"/>
+        <line num="29" type="stmt" count="1"/>
         <line num="30" type="stmt" count="0"/>
-        <line num="31" type="stmt" count="0"/>
+        <line num="31" type="stmt" count="1"/>
         <line num="32" type="stmt" count="0"/>
-        <line num="33" type="stmt" count="0"/>
-        <metrics loc="36" ncloc="36" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="0" elements="6" coveredelements="0"/>
+        <line num="33" type="stmt" count="1"/>
+        <metrics loc="36" ncloc="36" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="5" coveredstatements="3" elements="6" coveredelements="3"/>
       </file>
       <file name="/home/runner/work/jev-php/jev-php/src/Classification/NoulAnswer.php">
         <class name="JevPHP\Classification\NoulAnswer" namespace="JevPHP\Classification">
           <metrics complexity="7" methods="3" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="3" elements="10" coveredelements="4"/>
         </class>
-        <line num="11" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
-        <line num="16" type="stmt" count="2"/>
+        <line num="11" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
+        <line num="16" type="stmt" count="3"/>
         <line num="19" type="method" name="isTrue" visibility="public" complexity="4" crap="4.59" count="1"/>
         <line num="21" type="stmt" count="1"/>
         <line num="22" type="stmt" count="0"/>
@@ -194,16 +194,16 @@
         <class name="JevPHP\Classification\NoulType" namespace="JevPHP\Classification">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
         </class>
-        <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="3"/>
-        <line num="11" type="stmt" count="3"/>
+        <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="4"/>
+        <line num="11" type="stmt" count="4"/>
         <metrics loc="14" ncloc="14" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </file>
       <file name="/home/runner/work/jev-php/jev-php/src/Classification/QuestionType.php">
         <class name="JevPHP\Classification\QuestionType" namespace="JevPHP\Classification">
           <metrics complexity="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
         </class>
-        <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="6"/>
-        <line num="13" type="stmt" count="6"/>
+        <line num="9" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="7"/>
+        <line num="13" type="stmt" count="7"/>
         <metrics loc="15" ncloc="15" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
       </file>
       <file name="/home/runner/work/jev-php/jev-php/src/Classification/ScoreAnswer.php">
@@ -272,8 +272,8 @@
         <class name="JevPHP\Utility" namespace="JevPHP">
           <metrics complexity="11" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="20" coveredelements="20"/>
         </class>
-        <line num="17" type="method" name="decodeJson" visibility="public" complexity="2" crap="2" count="6"/>
-        <line num="20" type="stmt" count="6"/>
+        <line num="17" type="method" name="decodeJson" visibility="public" complexity="2" crap="2" count="7"/>
+        <line num="20" type="stmt" count="7"/>
         <line num="21" type="stmt" count="1"/>
         <line num="22" type="stmt" count="1"/>
         <line num="23" type="stmt" count="1"/>
@@ -295,6 +295,6 @@
         <metrics loc="53" ncloc="48" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="18" coveredstatements="18" elements="20" coveredelements="20"/>
       </file>
     </package>
-    <metrics files="19" loc="639" ncloc="586" classes="15" methods="25" coveredmethods="18" conditionals="0" coveredconditionals="0" statements="155" coveredstatements="129" elements="180" coveredelements="147"/>
+    <metrics files="19" loc="639" ncloc="586" classes="15" methods="25" coveredmethods="18" conditionals="0" coveredconditionals="0" statements="155" coveredstatements="132" elements="180" coveredelements="150"/>
   </project>
 </coverage>

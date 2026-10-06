@@ -7,11 +7,13 @@ namespace Tests\Unit\Classification;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Response;
 use JevPHP\Classification\ChoiceAnswer;
 use JevPHP\Classification\ChoiceType;
 use JevPHP\Classification\JevClassifier;
 use JevPHP\Classification\JevConfig;
+use JevPHP\Classification\LayaConfig;
 use JevPHP\Classification\NoulAnswer;
 use JevPHP\Classification\NoulCriteria;
 use JevPHP\Classification\NoulType;
@@ -205,4 +207,51 @@ it('can generate a score answer with some criteria', function () {
     ];
 
     expect($expected['frustration']->isSimilarTo($response['frustration']))->toBeTrue('Got a different response: '.json_encode($response));
+});
+
+it('can generate a noul answer using laya config', function () {
+    $history = [];
+    $mock = new MockHandler([
+        new Response(200, [], <<<'JSON'
+        {
+          "model": "jev-1.13.0",
+          "answers": {
+            "is_urgent": {
+              "type": "noul",
+              "noul": 0.95
+            }
+          },
+          "usage": {
+            "input_tokens": 296,
+            "output_tokens": 20
+          }
+        }
+        JSON),
+    ]);
+    $handlerStack = HandlerStack::create($mock);
+    $handlerStack->push(Middleware::history($history));
+    $client = new Client(['handler' => $handlerStack]);
+
+    $chat = new JevClassifier(new LayaConfig(
+        apiKey: 'fake-laya-api-key',
+        url: 'https://laya.example.test/v1/systemone',
+        client: $client,
+    ));
+
+    $questions = [
+        'is_urgent' => new NoulType('Does this convey urgency?'),
+    ];
+    $response = $chat->askQuestions('Help! My payouts have been failing for 3 days.', $questions);
+
+    $expected = [
+        'is_urgent' => new NoulAnswer(0.95, 296, 20),
+    ];
+
+    expect($response)->toEqual($expected);
+    expect($history)->toHaveCount(1);
+    expect((string) $history[0]['request']->getUri())->toBe('https://laya.example.test/v1/systemone');
+    expect($history[0]['request']->getHeaderLine('Authorization'))->toBe('Bearer fake-laya-api-key');
+
+    $requestBody = json_decode((string) $history[0]['request']->getBody(), true, 512, JSON_THROW_ON_ERROR);
+    expect($requestBody['model'])->toBe(LayaConfig::LATEST);
 });
