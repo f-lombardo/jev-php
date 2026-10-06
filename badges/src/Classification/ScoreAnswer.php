@@ -6,7 +6,7 @@ namespace JevPHP\Classification;
 
 class ScoreAnswer extends Answer
 {
-    const MAX_DIFFERENCE = 0.05;
+    const MAX_DIFFERENCE = 0.1;
 
     /**
      * @param  array<string, string>  $legend

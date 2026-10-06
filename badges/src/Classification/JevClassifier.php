@@ -28,13 +28,12 @@ class JevClassifier implements ClassifierInterface
     private string $url;
 
     public function __construct(
-        JevConfig $config = new JevConfig(),
+        JevConfig|LayaConfig $config = new JevConfig(),
         private readonly LoggerInterface $logger = new NullLogger())
     {
         $this->url = $config->url;
         $this->model = $config->model;
-        $this->apiKey = $config->apiKey
-            ?? (string) Utility::readEnvironment('JEV_API_KEY');
+        $this->apiKey = $config->apiKey;
         $this->client = $config->client ?: Psr18ClientDiscovery::find();
         $this->factory = new Psr17Factory(
             requestFactory: $config->requestFactory,
@@ -87,7 +86,9 @@ class JevClassifier implements ClassifierInterface
 
         $request = $this->factory->createRequest('POST', $this->url);
         $request = $request->withAddedHeader('Content-Type', 'application/json');
-        $request = $request->withAddedHeader('Authorization', 'Bearer '.$this->apiKey);
+        if ($this->apiKey) {
+            $request = $request->withAddedHeader('Authorization', 'Bearer '.$this->apiKey);
+        }
 
         $data = new JevRequestBody($this->model, $state, $questions);
 

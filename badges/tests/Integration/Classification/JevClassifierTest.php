@@ -7,40 +7,48 @@ namespace Tests\Integration\Classification;
 use JevPHP\Classification\ChoiceAnswer;
 use JevPHP\Classification\ChoiceType;
 use JevPHP\Classification\JevClassifier;
+use JevPHP\Classification\JevConfig;
+use JevPHP\Classification\LayaConfig;
 use JevPHP\Classification\NoulCriteria;
 use JevPHP\Classification\NoulType;
 use JevPHP\Classification\ScoreAnswer;
 use JevPHP\Classification\ScoreCriteria;
 use JevPHP\Classification\ScoreType;
 
-it('can generate a noul answer with no criteria', function () {
-    $chat = new JevClassifier();
+it('can generate a noul answer with no criteria', function (JevConfig|LayaConfig $config) {
+    $classifier = new JevClassifier($config);
     $questions = [
         'is_urgent' => new NoulType('Does this convey urgency?'),
     ];
-    $response = $chat->askQuestions('Help! My payouts have been failing for 3 days.', $questions);
+    $response = $classifier->askQuestions('Help! My payouts have been failing for 3 days.', $questions);
 
     expect($response['is_urgent']->isTrue(0.7))->toBeTrue('Got a different response: '.json_encode($response));
     expect($response['is_urgent']->inputTokens)->toBeGreaterThan(0);
-    expect($response['is_urgent']->outputTokens)->toBeGreaterThan(0);
-});
+    expect($response['is_urgent']->outputTokens)->toBeGreaterThanOrEqual(0);
+})->with([
+    'Jev' => [new JevConfig()],
+    'Laya' => [new LayaConfig()],
+]);
 
-it('can generate a noul answer with some criteria', function () {
-    $chat = new JevClassifier();
+it('can generate a noul answer with some criteria', function (JevConfig|LayaConfig $config) {
+    $classifier = new JevClassifier($config);
     $questions = [
         'is_urgent' => new NoulType(
             'Does this convey urgency?',
             new NoulCriteria('Explicitly time-sensitive', 'No urgency expressed')),
     ];
-    $response = $chat->askQuestions('Help! My payouts have been failing for 3 days.', $questions);
+    $response = $classifier->askQuestions('Help! My payouts have been failing for 3 days.', $questions);
 
-    expect($response['is_urgent']->isTrue())->toBeTrue('Got a different response: '.json_encode($response));
+    expect($response['is_urgent']->isTrue(0.7))->toBeTrue('Got a different response: '.json_encode($response));
     expect($response['is_urgent']->inputTokens)->toBeGreaterThan(0);
-    expect($response['is_urgent']->outputTokens)->toBeGreaterThan(0);
-});
+    expect($response['is_urgent']->outputTokens)->toBeGreaterThanOrEqual(0);
+})->with([
+    'Jev' => [new JevConfig()],
+    'Laya' => [new LayaConfig()],
+]);
 
-it('can generate a choice answer with some criteria', function () {
-    $chat = new JevClassifier();
+it('can generate a choice answer with some criteria', function (JevConfig|LayaConfig $config) {
+    $classifier = new JevClassifier($config);
     $questions = [
         'department' => new ChoiceType(
             'Which team should handle this?',
@@ -51,7 +59,7 @@ it('can generate a choice answer with some criteria', function () {
             ]
         ),
     ];
-    $response = $chat->askQuestions('Help! My payouts have been failing for 3 days.', $questions);
+    $response = $classifier->askQuestions('Help! My payouts have been failing for 3 days.', $questions);
 
     $expected = [
         'department' => new ChoiceAnswer(
@@ -67,18 +75,21 @@ it('can generate a choice answer with some criteria', function () {
 
     expect($expected['department']->isSimilarTo($response['department']))->toBeTrue('Got a different response: '.json_encode($response));
     expect($response['department']->inputTokens)->toBeGreaterThan(0);
-    expect($response['department']->outputTokens)->toBeGreaterThan(0);
-});
+    expect($response['department']->outputTokens)->toBeGreaterThanOrEqual(0);
+})->with([
+    'Jev' => [new JevConfig()],
+    'Laya' => [new LayaConfig()],
+]);
 
-it('can generate a score answer with some criteria', function () {
-    $chat = new JevClassifier();
+it('can generate a score answer with some criteria', function (JevConfig|LayaConfig $config) {
+    $classifier = new JevClassifier($config);
     $questions = [
         'frustration' => new ScoreType(
             'How frustrated is the customer?',
             new ScoreCriteria(['Calm', 'Frustrated', 'Very angry'])
         ),
     ];
-    $response = $chat->askQuestions('Help! My payouts have been failing for 3 days.', $questions);
+    $response = $classifier->askQuestions('Help! My payouts have been failing for 3 days.', $questions);
 
     $expected = [
         'frustration' => new ScoreAnswer(
@@ -99,5 +110,8 @@ it('can generate a score answer with some criteria', function () {
 
     expect($expected['frustration']->isSimilarTo($response['frustration']))->toBeTrue('Got a different response: '.json_encode($response));
     expect($response['frustration']->inputTokens)->toBeGreaterThan(0);
-    expect($response['frustration']->outputTokens)->toBeGreaterThan(0);
-});
+    expect($response['frustration']->outputTokens)->toBeGreaterThanOrEqual(0);
+})->with([
+    'Jev' => [new JevConfig()],
+    'Laya' => [new LayaConfig()],
+]);

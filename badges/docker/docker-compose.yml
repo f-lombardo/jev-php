@@ -20,3 +20,5 @@ services:
         environment:
             PHP_IDE_CONFIG: serverName=PHPSTORM
             JEV_API_KEY: ${JEV_API_KEY}
+            LAYA_URL: ${LAYA_URL}
+            LAYA_APY_KEY: ${LAYA_APY_KEY}
