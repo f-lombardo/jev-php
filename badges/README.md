@@ -2,6 +2,8 @@
 
 ![Coverage](https://f-lombardo.github.io/jev-php/badges/coverage.svg)
 
+![jev-php banner](docs/banner.png)
+
 `jev-php` is a small PHP library extracted from the larger PHP project [LLPhant](https://github.com/LLPhant/LLPhant) to
 provide typed access to [Jev](https://docs.typesafe.ai/api) classification APIs.
 
@@ -134,6 +136,15 @@ $frustrationProbabilities = $frustrationScore->probabilities;
 - Optional criteria object: `NoulCriteria`
 - Helper method:
     - `isTrue(float $minTrueScore = 0.95): bool` returns `true` when `score >= $minTrueScore`.
+
+Short snippet:
+
+```php
+$isUrgent = (new JevClassifier())->askQuestions(
+    'My payouts have been failing for 3 days.',
+    ['urgent' => new NoulType('Is this urgent?')]
+)['urgent']->isTrue(0.8);
+```
 
 ### Choice
 
