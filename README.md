@@ -1,6 +1,6 @@
 # jev-php
 
-![Coverage](https://f-lombardo.github.io/jev-php/badges/coverage.svg)
+![Coverage](https://f-lombardo.github.io/jev-php/badges/coverage.svg) [![Plumb score](https://plumbphp.dev/badges/f-lombardo/jev-php/composite.svg)](https://plumbphp.dev/f-lombardo/jev-php)
 
 ![jev-php banner](docs/banner.png)
 
