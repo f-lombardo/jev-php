@@ -21,7 +21,7 @@
     "require-dev": {
         "guzzlehttp/guzzle": "^7.4.5",
         "guzzlehttp/psr7": "^2.7",
-        "laravel/pint": "v1.15.3",
+        "laravel/pint": "v1.32.1",
         "mockery/mockery": "^1.6.12",
         "pestphp/pest": "^3.0",
         "pestphp/pest-plugin-arch": "^3.0",
